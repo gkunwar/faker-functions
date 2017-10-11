@@ -4,10 +4,9 @@ import * as functions from 'firebase-functions'
 import * as admin from 'firebase-admin'
 admin.initializeApp(functions.config().firebase);
 
-// Create and Deploy Cloud Function with TypeScript using script that is
-// defined in functions/package.json:
-//    cd functions
-//    npm run deploy
+function addToCollection(name: string, obj: any) {
+  return admin.firestore().collection(name).add(obj);
+}
 
 export let helloWorld = functions.https.onRequest((req, res) => {
  res.send("Hello from Firebase!\n\n");
@@ -21,9 +20,10 @@ export let addDocument = functions.https.onRequest((req, res) => {
   let obj = {};
   obj[name] = value;
 
-  admin.firestore().collection('messages').add(obj).then(writeResult => {
+  addToCollection('messages', obj).then(writeResult => {
     // Send back a message that we've succesfully written the message
     res.json({result: `Message with ID: ${writeResult.id} added.`});
   });
 });
+
 

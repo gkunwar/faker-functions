@@ -2,7 +2,7 @@
 
 
 ```
-curl 'https://us-central1-faker-function.cloudfunctions.net/addDocument?name=foo&value=Hello!'
+curl 'https://us-central1-faker-function.cloudfunctions.net/addDocument?name=text&value=Hello!'
 ```
 
 reports new ID of document added to messages collection:

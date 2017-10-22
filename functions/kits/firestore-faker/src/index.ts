@@ -3,7 +3,6 @@ import * as faker from 'faker'
 
 // if you need to use the Firebase Admin SDK, uncomment the following:
 import * as admin from 'firebase-admin'
-admin.initializeApp(functions.config().firebase);
 
 function getConfig() {
   let config = functions.config()['firestore-faker']['default'];
@@ -19,7 +18,9 @@ function addToCollection(obj: any) {
   return admin.firestore()
               .collection(name)
               .add(obj).then(writeResult => {
-                return {id: writeResult.id, collection:name, doc: obj};
+                let result = {id: writeResult.id, collection:name, doc: obj};
+                console.log(result);
+                return result;
   });
 }
 

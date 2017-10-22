@@ -1,14 +1,17 @@
 {
-  "name": "functions",
-  "description": "Cloud Functions for Firebase",
+  "name": "firestore-slacker",
+  "version": "0.0.1-test1",
+  "description": "Post to Slack on Firestore Write",
   "dependencies": {
-    "firestore-faker": "file:kits/firestore-faker",
-    "firestore-slacker": "file:kits/firestore-slacker",
-    "firebase-admin": "~5.4.2",
-    "firebase-functions": "~0.7.1"
+    "request-promise": "^4.2.2",
+    "request": "^2.34"
   },
   "devDependencies": {
     "typescript": "^2.5.3"
+  },
+  "peerDependencies": {
+    "firebase-admin": "^5.4.0",
+    "firebase-functions": "^0.7.0"
   },
   "scripts": {
     "build": "tsc",

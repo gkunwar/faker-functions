@@ -1,13 +1,16 @@
 {
-  "name": "functions",
-  "description": "Cloud Functions for Firebase",
+  "name": "firestore-faker",
+  "version": "0.0.1-test7",
+  "description": "Generate Fake Data for Firestore database",
   "dependencies": {
-    "firestore-faker": "file:kits/firestore-faker",
-    "firebase-admin": "~5.4.2",
-    "firebase-functions": "~0.7.1"
+    "faker": "^4.1.0"
   },
   "devDependencies": {
     "typescript": "^2.5.3"
+  },
+  "peerDependencies": {
+    "firebase-admin": "^5.4.0",
+    "firebase-functions": "^0.7.0"
   },
   "scripts": {
     "build": "tsc",
